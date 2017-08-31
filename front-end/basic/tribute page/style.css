@@ -1,0 +1,38 @@
+body
+  {
+    margin:50px;
+  }
+.container-fluid
+{
+  background-color:lavender;
+}
+h1
+{
+  text-align:center;
+  padding-top:20px;
+}
+#intro
+{
+  text-align:center;
+}
+figcaption
+{
+  font-size:20px;
+}
+#timeline
+{
+  margin-top:40px;
+}
+blockquote
+{
+  text-align:center;
+  font-size:20px;
+}
+.image
+{
+  text-align:center;
+}
+.more
+{
+  padding-bottom: 25px;
+}
