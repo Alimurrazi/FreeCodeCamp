@@ -1,0 +1,85 @@
+body
+{
+	background-color: #3D5229;
+}
+
+.main
+{
+	 padding-top: 10px;
+	/* background-color:#ECF0F1; */
+	background-color: #3D5229; 
+
+	 position: absolute;
+     margin: auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     width: 1000px;
+     height: 250px;
+     text-align: center;
+     vertical-align: middle;
+}
+
+.button-part
+{
+	position: absolute;
+	margin-top: 35px;
+	margin-left: 820px;
+}
+
+#twitter
+{
+	font-size:45px;
+	display: inline;
+	color: #4099FF;
+	cursor: pointer;
+}
+
+#new
+{
+	/*  background-color: #4CAF50; */ /* Green */ 
+	background-color: #526D8B; 
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+blockquote
+	{
+	    font-family: Georgia, serif;
+	/*	padding-top: 70px; */
+		font-size: 30px;
+		font-style: italic;
+		position: relative;
+		color: white;
+	}
+	blockquote:before
+	{
+	/*	display: block;  */
+		content: "\201C";
+		font-size: 50px;
+	/*	position: absolute;  */
+	/*	top: -0px;   */
+		left: 0px;
+		color: white;
+	}
+  cite
+  {
+  	font-size: 24px;
+  	display: block;
+  	margin-top: 3px;
+  	color: white;
+  	margin-bottom: 10px;
+  }
+  cite:before
+  {
+  	content: "\2014 \2009";
+  	color: white;
+  }
