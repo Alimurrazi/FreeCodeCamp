@@ -1,0 +1,43 @@
+
+body
+{
+	background-color: #2F4F4F;
+    color: white;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+#location
+{
+	font-size: 35px;
+}
+
+#data
+{
+    font-size: 20px;
+}
+
+#temp
+{
+	cursor: pointer;
+}
+
+#weather
+{
+	background-color: #2F4F4F;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 600px;
+	height: 200px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#location
+{
+
+}
