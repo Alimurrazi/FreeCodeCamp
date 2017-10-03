@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var ara=[];
+
+function prime()
+{
+	ara[2]=ara[3]=1;
+   for(var i=4;i<=1000;i++)
+   {
+   	for(var j=2;j<=Math.floor(i/2);j++)
+   	{
+   		if(i%j==0)
+   			break;
+   	}
+   	if(j>Math.floor(i/2))
+   		ara[i]=1;
+   }	
+}
+	
+function sumPrimes(num) {
+  prime();
+  var sum=0;
+  for(var i=2;i<=num;i++)
+  {
+    if(ara[i]==1)
+    	sum=sum+i;
+  }
+   console.log(sum);
+  return sum;
+}
+
+sumPrimes(10);
+
+</script>
+</body>
+</html>

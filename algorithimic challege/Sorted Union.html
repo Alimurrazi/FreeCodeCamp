@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function uniteUnique(arr) {
+		var newAra=[],checkAra=[];
+		for(var i=0;i<arguments.length;i++)
+		{
+		//	console.log(arguments[i].length);
+			for(var j=0;j<arguments[i].length;j++)
+			{
+				var value=arguments[i][j];
+				if(checkAra[value]!=1)
+				{	
+				checkAra[value]=1;
+				newAra.push(value);
+				}	
+			//	console.log(arguments[i][j]);
+			}
+		}
+		//console.log(newAra);
+  return newAra;
+}
+
+uniteUnique([1, 3, 2], [1, [5]], [2, [4]]);
+</script>
+</body>
+</html>

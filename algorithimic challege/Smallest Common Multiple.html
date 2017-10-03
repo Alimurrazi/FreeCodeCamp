@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function smallestCommons(arr) {
+  
+  var min=Math.min(arr[0],arr[1]);
+  var max=Math.max(arr[0],arr[1]);
+
+  var ara=[];
+
+  for(var i=min;i<=max;i++)
+  {
+  	ara.push(i);
+  }
+  function gcd(a, b) {
+      //  return !b ? a : gcd(b, a % b);
+        if(b==0)
+        	return a;
+        return gcd(b,a%b);
+    }
+
+  function lcm(a,b)
+  {
+     return (a*b)/gcd(a,b);
+  }
+
+  var result=min;
+  for(i=0;i<ara.length;i++)
+  {
+  	result=lcm(result,ara[i]);
+  }
+  console.log(result);
+  return result;
+}
+
+
+smallestCommons([18,23]);
+
+</script>
+</body>
+</html>

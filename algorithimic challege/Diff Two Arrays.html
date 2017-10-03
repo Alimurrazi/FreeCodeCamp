@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <script type="text/javascript">
+function diffArray(arr1, arr2) {
+	var newArr1=[];
+	var newArr2=[];
+  for(var i=0;i<arr1.length;i++)
+  {
+  //	window.alert(arr1[i]);
+    for(var j=0;j<arr2.length;j++)
+    {
+    	if(arr1[i]==arr2[j])
+    		break;
+    }
+    if(j==arr2.length)
+    	newArr1.push(arr1[i]);
+  }
+
+    for(var i=0;i<arr2.length;i++)
+  {
+    for(var j=0;j<arr1.length;j++)
+    {
+    	if(arr2[i]==arr1[j])
+    		break;
+    }
+    if(j==arr1.length)
+    	newArr2.push(arr2[i]);
+  }
+
+  var newArr = newArr1.concat(newArr2);;
+//  window.alert(newArr);
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+  </script>
+</body>
+</html>

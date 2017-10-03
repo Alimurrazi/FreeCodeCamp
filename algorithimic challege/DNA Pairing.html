@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+function pairElement(str) {
+	var ara=[];
+	for(var i=0;i<str.length;i++)
+	{
+		var small=[];
+		var pair;
+
+		if(str[i]=='A')
+			pair='T';
+		else if(str[i]=='G')
+			pair='C';
+
+		else if(str[i]=='T')
+			pair='A';
+
+		else if(str[i]=='C')
+			pair='G';
+       small.push(str[i]);
+       small.push(pair);
+       ara.push(small);
+	}
+	//console.log(ara);
+  return ara;
+}
+
+pairElement("ATCGA");
+
+
+</script>
+</body>
+</html>

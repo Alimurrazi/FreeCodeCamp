@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function fearNotLetter(str) {
+		var newStr,max=0,min=65500,value;
+		var ara=[];
+		for(var i=0;i<str.length;i++)
+		{
+			value=str.charCodeAt(i);
+		//	console.log(value);
+          ara[value]=1;
+          if(value>max)
+          	max=value;
+          if(value<min)
+          	min=value;
+		}
+		for(i=min;i<=max;i++)
+		{
+			//console.log(i);
+			if(ara[i]!=1)
+			{
+			//	newStr.push(String.fromCharCode(i));
+			newStr="";
+			newStr=newStr+String.fromCharCode(i);
+		    }
+		}
+		console.log(newStr);
+  return newStr;
+}
+
+fearNotLetter("abc");
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function spinalCase(str) {
+  var newStr="";
+  for(var i=0;i<str.length;i++)
+  {
+    if(str[i]>='A' && str[i]<='Z')
+    {
+      if(str[i-1]>='a' && str[i-1]<='z')
+      	newStr=newStr+"-"+str[i].toLowerCase();
+        else
+      	newStr=newStr+str[i].toLowerCase();
+    }
+    else if(str[i]=='_' || str[i]==' ')
+    	newStr=newStr+"-";
+    else
+    	newStr=newStr+str[i];
+    console.log(newStr);
+  }
+ // console.log(newStr);
+  return newStr;
+}
+
+spinalCase('This Is Spinal Tap');
+
+</script>
+</body>
+</html>

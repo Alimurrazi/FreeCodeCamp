@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <script type="text/javascript">
+ 	
+function steamrollArray(arr) {
+  
+  var newAra=[];
+  var value=function(arg)
+  {
+  	if(!Array.isArray(arg))
+  	{
+  		newAra.push(arg);
+  	}
+  	else
+  	{
+  		for(var a in arg)
+  		{
+  			value(arg[a]);
+  		}
+  	}
+  };	
+  arr.forEach(value);
+  console.log(newAra);
+  return newAra;
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+ </script>
+</body>
+</html>

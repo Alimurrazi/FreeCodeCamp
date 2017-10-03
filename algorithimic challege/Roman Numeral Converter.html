@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <script type="text/javascript">
+ 	
+function convertToRoman(num) {
+ var ara=[];
+ ara[1]="I";
+ ara[2]="II";
+ ara[3]="III";
+ ara[4]="IV";
+ ara[5]="V";
+ ara[6]="VI";
+ ara[7]="VII";
+ ara[8]="VIII";
+ ara[9]="IX";
+
+ ara[10]="X";
+ ara[20]="XX";
+ ara[30]="XXX";
+ ara[40]="XL";
+ ara[50]="L";
+ ara[60]="LX";
+ ara[70]="LXX";
+ ara[80]="LXXX";
+ ara[90]="XC";
+
+ ara[100]="C";
+ ara[200]="CC";
+ ara[300]="CCC";
+ ara[400]="CD";
+ ara[500]="D";
+ ara[600]="DC";
+ ara[700]="DCC";
+ ara[800]="DCCC";
+ ara[900]="CM";
+
+ ara[1000]="M";
+ ara[2000]="MM";
+ ara[3000]="MMM";
+
+ var temp;
+ var res=[];
+ i=1; 
+ while(num!=0)
+ {
+ 	console.log(num);
+ 	temp=num%10;
+ 	res.unshift(ara[temp*i]);
+ 	num=Math.floor(num/10);
+ 	console.log(ara[temp*i]);
+ 	i=i*10;
+ } 
+ // window.alert(res);
+  num="";
+  for(i=0;i<res.length;i++)
+  {
+  	num=num+res[i];
+  }
+ // window.alert(num);	
+ return num;
+}
+
+//MCMLXXXIV
+//,CM,LXXX,IV
+
+convertToRoman(3999);
+
+ </script>
+</body>
+</html>

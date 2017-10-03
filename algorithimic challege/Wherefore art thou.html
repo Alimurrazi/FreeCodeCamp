@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <script type="text/javascript">
+ 	
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+   
+
+
+  var sourceKey=Object.keys(source);
+  
+  var name=sourceKey[0];
+
+  //console.log(collection[0][name]);
+
+  	for(var j=0;j<collection.length;j++)
+  	{
+  		for(var i=0;i<sourceKey.length;i++)
+  		{
+ // 		console.log(collection[j][sourceKey[i]]);	
+  		if(collection[j][sourceKey[i]]!=source[sourceKey[i]])
+          break;
+  	    }
+  	    if(i==sourceKey.length)
+  	    arr.push(collection[j]);	
+  	//	console.log(arr);
+  	}
+  
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+
+ </script>
+</body>
+</html>

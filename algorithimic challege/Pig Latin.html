@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <script type="text/javascript">
+  	function translatePigLatin(str) {
+  		if(str[0]=='a'||str[0]=='e'||str[0]=='i'||str[0]=='o'||str[0]=='u')
+  		{
+           str=str+"way";
+  		}
+  		else
+  		{ 	
+  		  for(var i=0;i<str.length;i++)
+  		  {
+  		  if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+            break;
+  		  }
+          //console.log(i);
+           str=str.slice(i)+str.substring(0,i)+"ay";
+  		}
+  		console.log(str);
+  return str;
+}
+
+translatePigLatin("glove");
+  </script>
+</body>
+</html>

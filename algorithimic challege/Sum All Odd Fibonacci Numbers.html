@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var ara=[];
+
+function fibonacci()
+{
+   ara.push(1);
+   ara.push(1);
+   for(var i=2; ;i++)
+   {
+   	ara[i]=ara[i-1]+ara[i-2];
+   	if(ara[i]>4000000)
+   		break;
+   }
+}
+	
+function sumFibs(num) {
+	fibonacci();
+	var sum=0;
+	for(var i=0; ;i++)
+	{
+       if(ara[i]>num)
+       	break;
+       if(ara[i]%2!=0)
+       	sum=sum+ara[i];
+	}
+	console.log(sum);
+  return num;
+}
+
+sumFibs(1000);
+
+</script>
+</body>
+</html>

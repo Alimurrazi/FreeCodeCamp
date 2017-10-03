@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+function decimel(binary)
+{
+	var value=0;
+	var power=binary.length-1;
+  for(var i=0;i<binary.length;i++)
+  {
+     value=value+binary[i]*Math.pow(2,power);
+     power--;
+  }
+  return value;
+}
+	
+function binaryAgent(str) {
+  var ara=str.split(" ");
+  var result="";
+  for(var i=0;i<ara.length;i++)
+  {
+     result=result+String.fromCharCode(decimel(ara[i]));
+  }
+  console.log(result);
+  return result;
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function convertHTML(str) {
+  // &colon;&rpar;
+ // var before = new RegExp("&","g");
+ // console.log(before);
+  str = str.replace(/&/g, "&amp;");
+  str = str.replace(/</g, "&lt;");
+  str = str.replace(/>/g, "&gt;");
+  str = str.replace(/"/g, "&quot;");
+  str = str.replace(/'/g, "&apos;");
+  console.log(str);
+ // str = str.replace(before, after);
+ // str = str.replace(before, after);
+ // str = str.replace(before, after);
+ // str = str.replace(before, after);
+  return str; 
+}
+
+convertHTML("Dolce & Gabbana");
+
+</script>
+</body>
+</html>
