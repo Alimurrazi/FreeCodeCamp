@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function telephoneCheck(str) {
+  
+  //var r = /^a$/
+/*  
+ var inValid = /\s/;
+var value = "test space";
+var k = inValid.test(value);
+console.log(k);
+*/
+
+  if(/^1*\s*[0-9]{3}\-[0-9]{3}\-[0-9]{4}$/.test(str)==true)
+  	return true;
+  // console.log("1");
+  else if(/^1*\s*\([0-9]{3}\)\s*[0-9]{3}\-[0-9]{4}$/.test(str)==true)
+  	return true;
+  // console.log("2");
+  else if(/^1*\s*\([0-9]{3}\)\s*[0-9]{3}\s*[0-9]{4}$/.test(str)==true)
+  return true;
+ //  console.log("3");
+  else if(/^1*\s*\s*[0-9]{3}\s*[0-9]{3}\s*[0-9]{4}$/.test(str)==true)
+  return true;
+  // console.log("4");
+
+  
+  return false;
+}
+
+//telephoneCheck("555-555-5555");
+//telephoneCheck("1 555-555-5555");
+//telephoneCheck("1 (555) 555-5555");
+telephoneCheck("1 555 555 5555");
+//telephoneCheck("(6505552368)");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+ 
+
+function sym(args) {
+	var ara=[];
+	var newAra=[];
+ 
+  var check=[];
+  for(var i=0;i<5;i++)
+  check[i]=[];
+
+  for(i=0;i<arguments.length;i++)
+  {
+    for(var j=0;j<arguments[i].length;j++)
+    {
+      if(check[i][arguments[i][j]]==undefined)
+      {
+        ara.push(arguments[i][j]);
+        check[i][arguments[i][j]]=1;
+      }
+    }
+  }
+  
+  var araCheck=[]; 
+
+  for(i=0;i<ara.length;i++)
+  {
+      if(araCheck[ara[i]]==undefined)
+        araCheck[ara[i]]=1;
+      else
+        araCheck[ara[i]]++;
+  }
+
+  var newCheck=[];
+
+  for( i=0;i<ara.length;i++)
+  {
+    if(araCheck[ara[i]]!=2 && newCheck[ara[i]]==undefined)
+    {
+      newAra.push(ara[i]);
+      newCheck[ara[i]]=1;
+    }
+  }
+
+ // console.log(newAra);
+ 
+  return newAra;
+}
+
+//sym([1, 2, 3], [5, 2, 1, 4]);
+sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);
+//sym([1, 2, 5], [2, 3, 5], [3, 4, 5]);
+//sym([1, 2, 5], [2, 3, 5], [3, 4, 5]);
+
+
+</script>
+</body>
+</html>
