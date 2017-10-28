@@ -1,0 +1,29 @@
+table.calc
+{
+	border: 2px;
+	background-color: green;
+	margin-top: 10%;
+	margin-left: 30%;
+	margin-bottom: 25%;
+	margin-right: 20%;
+	font-size: 30px;
+}
+input.calc
+{
+	margin: 5px;
+}
+input[type=button] 
+{
+    width: 50px;
+    height: 50px;	
+}
+#equal
+{
+	width: 100%;
+}
+#screen
+{
+	height: 40px;
+	width: 230px;
+	padding: 2px;
+}

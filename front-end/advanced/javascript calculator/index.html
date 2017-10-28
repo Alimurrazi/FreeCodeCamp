@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<body>
+  <div class="container">
+  	<table class="calc">
+  		<tr>
+  			<td colspan=4>
+  				<input class="calc" type="text" id="screen">
+  			</td>
+  		</tr>
+
+  		<tr>
+  			<td><input class="calc" type="button" value="7" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="8" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="9" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="/" onclick="pushButton(this.value)"></td>
+  		</tr>
+
+  		  		<tr>
+  			<td><input class="calc" type="button" value="4" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="5" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="6" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="*" onclick="pushButton(this.value)"></td>
+  		</tr>
+
+  		<tr>
+  			<td><input class="calc" type="button" value="1" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="2" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="3" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="-" onclick="pushButton(this.value)"></td>
+  		</tr>
+
+  		 <tr>
+  			<td><input class="calc" type="button" value="0" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="." onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="C" onclick="pushButton(this.value)"></td>
+  			<td><input class="calc" type="button" value="+" onclick="pushButton(this.value)"></td>
+  		</tr>
+<tr>
+	<td colspan="3"><input class="calc" type="button" value="=" id="equal" onclick="calculate(document.getElementById('screen').value)"></td>
+</tr>
+
+  	</table>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
