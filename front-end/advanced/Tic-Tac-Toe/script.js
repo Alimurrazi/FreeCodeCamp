@@ -31,32 +31,44 @@ function refresh()
 
     $('#title').html('');
 	var id;
+
+    $('.grid').css('paddingTop','110px');
+
 	$('#one').html('');
 	$('#one').attr("onClick","fill(this.id,1)");
+	$('#one').css('color','black');
     
     $('#two').html('');
 	$('#two').attr("onClick","fill(this.id,2)");
+	$('#two').css('color','black');
 
 	$('#three').html('');
 	$('#three').attr("onClick","fill(this.id,3)");
+	$('#three').css('color','black');
 
 	$('#four').html('');
 	$('#four').attr("onClick","fill(this.id,4)");
+	$('#four').css('color','black');
 
 	$('#five').html('');
 	$('#five').attr("onClick","fill(this.id,5)");
+	$('#five').css('color','black');
 
 	$('#six').html('');
 	$('#six').attr("onClick","fill(this.id,6)");
+	$('#six').css('color','black');
 
 	$('#seven').html('');
 	$('#seven').attr("onClick","fill(this.id,7)");
+	$('#seven').css('color','black');
 
 	$('#eight').html('');
 	$('#eight').attr("onClick","fill(this.id,8)");
+	$('#eight').css('color','black');
 
 	$('#nine').html('');
 	$('#nine').attr("onClick","fill(this.id,9)");
+	$('#nine').css('color','black');
 
 /*
 	for(var i=1;i<=9;i++)
@@ -117,14 +129,11 @@ function evaluate()
    wc1=-1,wc2=-1,wc3=-1;
    for(var i=0;i<3;i++)
 	{
-		console.log("kk"+i);
 	 if(board[i][0]==board[i][1] && board[i][1]==board[i][2] && board[i][0]!='-')
 			{
 				wc1=ijToId(i,0);
 				wc2=ijToId(i,1);
 				wc3=ijToId(i,2);
-				console.log("eas"+i);
-				console.log(board[i][0]+" "+robotIcon);
 				if(board[i][0]==robotIcon)
 					return 10;
 				else 
@@ -228,7 +237,6 @@ function findNew()
   			board[i][j]=robotIcon;
             newValue=minimax(0,false);
             board[i][j]='-';
-       console.log(robotIcon+' '+i+" "+j+" "+newValue+" "+bestValue);
             if(newValue>bestValue)
             {
             	newRow=i;
@@ -332,7 +340,7 @@ function fill(id,grid)
 {
     $('#'+id).html(user);
     $('#'+id).removeAttr('onClick');
-    console.log(board);
+    $('#'+id).css({"padding-top":0});
     var row;
     var coloumn;
     if(grid%3==0)
@@ -349,37 +357,31 @@ function fill(id,grid)
     //console.log(board);
     if(!defendFirst())
     {
-    	console.log("hello");
         findNew();  
     }
    // console.log(board);
-    console.log(newRow+" "+newColoumn);
     board[newRow][newColoumn]=robotIcon;
     var gridId=(newRow*3+newColoumn)+1;
-    console.log(gridId);
     gridId=convert(gridId);
     $('#'+gridId).html(robot);
     $('#'+gridId).removeAttr('onClick');
+    $('#'+gridId).css({"padding-top":0});
 
     if(evaluate()==10)
     {
-    	console.log("You Lose!");
-    	$("#title").append(" <h1>You Lose!</h1>");
-    	console.log("how old r u "+wc1+" "+wc2+" "+wc3);
+    	$("#title").append(" <h2>You Lose!</h2>");
     	wc1=convert(wc1);
       	wc2=convert(wc2);
     	wc3=convert(wc3);
-    	console.log("how r u "+wc1+" "+wc2+" "+wc3);
     	//$("#myParagraph").css({"backgroundColor": "black", "color": "white"});
         $('#'+wc1).css({"color":"red"});
         $('#'+wc2).css({"color":"red"});
         $('#'+wc3).css({"color":"red"});
         $('.grid').removeAttr('onClick');
     }
-    if(evaluate()==-10)
+    else if(evaluate()==-10)
     {
-    	console.log("You Win!");
-    	$("#title").append(" <h1>You Win!</h1>");
+    	$("#title").append(" <h2>You Win!</h2>");
     	wc1=convert(wc1);
     	wc2=convert(wc2);
     	wc3=convert(wc3);
@@ -388,10 +390,9 @@ function fill(id,grid)
         $('#'+wc3).css({"color":"red"});
         $('.grid').removeAttr('onClick');
     }
-    if(!isMoveLeft())
+    else if(!isMoveLeft())
     {
-    	console.log("draw!");
-    	$("#title").append(" <h1>Draw!</h1>");
+    	$("#title").append(" <h2>Draw!</h2>");
     	$('#board').removeAttr('onClick');
     }
 }

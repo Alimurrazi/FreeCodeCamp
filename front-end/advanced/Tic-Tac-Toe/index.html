@@ -13,10 +13,14 @@
 <body>
 
 <div class="container">
-  <h2>Tic Tac Toe</h2>
+  <div class="firstPage">
+      <h1>Tic Tac Toe</h1>
   <!-- Trigger the modal with a button -->
+  <h3>Choice your Icon</h3>
   <button type="button" id="x" class="btn" data-toggle="modal" data-target="#myModal" onclick="choseIcon(this.id)"><span class="fa fa-times"></span></button>
   <button type="button" id="o" class="btn" data-toggle="modal" data-target="#myModal" onclick="choseIcon(this.id)"><span class="fa fa-circle-o"></span></button>
+  </div>
+
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -26,7 +30,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Tic Tac Toe</h4>
+          <h1 class="modal-title">Tic Tac Toe</h4>
         </div>
         <div class="modal-body">
           <div id="title"></div>
@@ -50,8 +54,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" style="float: left;" onclick="refresh()">Refresh</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-basic" style="float: left;" onclick="refresh()">Refresh</button>
+          <button type="button" class="btn btn-basic" data-dismiss="modal">Close</button>
         </div>
       </div>
       
