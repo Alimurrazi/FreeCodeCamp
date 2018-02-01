@@ -1,0 +1,49 @@
+.clock
+{
+	position: absolute;
+    top: 30%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+
+}
+
+.running
+{
+	margin-top: 10px;
+	width: 250px;
+	height: 250px;
+	border: 1px solid black; 
+	position: absolute;
+	border-radius: 50%;
+}
+
+.center
+{
+	position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+span
+{
+	margin: 3px;
+	font-size: 25px;
+}
+.time
+{
+	display: flex;
+}
+
+/*
+.break-time,.session-time ,.break-title,.session-title
+{
+   display: inline;
+}
+*/
+.break-time
+{
+	margin-right: 20px;
+}
