@@ -2,46 +2,43 @@
 <html>
 <head>
 	<title>Pomodoro Clock</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css"> 
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
 
-  	<span class="time">
-	<!--	<div class="break-title">Break Length</div>  -->
-	   Break Length<br>
-	   <span class="minus">-</span> 5   <span class="add">+</span>
-	</span>
-	<span class="time">
-	<!--	 <div class="session-title">Session Length</div> -->
-	   Session Length
-       <span class="minus">-</span> 25  <span class="add">+</span>
-   </span>
 
-	<div class="container">
 	<div class="clock">
-	<span class="break-time">
-	<!--	<div class="break-title">Break Length</div>  -->
+     
+    <div class="change-time"> 
+	<div class="break-time">
 	   <p>Break Length</p>
-	   <span class="minus">-</span> 5   <span class="add">+</span>
-	</span>
-	<span class="session-time">
-	<!--	 <div class="session-title">Session Length</div> -->
+	   <span class="break-minus">-</span>
+	   <span class="break-value">5</span>
+	   <span class="break-add">+</span>
+	</div>
+
+	<div class="session-time">
 	   <p>Session Length</p>
-       <span class="minus">-</span> 25  <span class="add">+</span>
-   </span>
+       <span class="session-minus">-</span>
+       <span class="session-value">25</span>
+       <span class="session-add">+</span>
+   </div>
+   </div>
+
      <div class="running">
      	<div class="center">
-     	<h3>Session</h3>
-     	<span class="time">25:00</span>
+     	<h3 id="what_running">Start</h3>
+     	<span class="time"><span class="minute">00</span>:<span class="second">00</span></span>
      </div>
+     <button class="btn btn-warning" onClick="window.location.reload()">Reload</button>
      </div>
  </div>
-</div>
 </body>
 </html>
