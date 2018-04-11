@@ -1,3 +1,4 @@
+var player="robot";
 var user='';
 var robot='';
 var userIcon;
@@ -11,7 +12,7 @@ var wc1=-1,wc2=-1,wc3=-1;
 
     var value;
     var newRow;
-    var newColoumn;
+    var newColoumn; 
 
 function refresh()
 {
@@ -160,47 +161,47 @@ function evaluate()
 
 function minimax(depth,isMax)
 {
-	var score=evaluate();
-	if(score==10||score==-10)
-		return score;
-	if(isMoveLeft()==false)
-		return 0;
-	if(isMax)
-	{
-		var bestMax=-1000;
-		for(var i=0;i<3;i++)
-		{
-			for(var j=0;j<3;j++)
-			{
-				if(board[i][j]=='-')
-				{
-					board[i][j]=robotIcon;
-					bestMax=Math.max(bestMax,minimax(depth+1,!isMax));
-					board[i][j]='-';
-				}
+  var score=evaluate();
+  if(score==10||score==-10)
+    return score;
+  if(isMoveLeft()==false)
+    return 0;
+  if(isMax)
+  {
+    var bestMax=-1000;
+    for(var i=0;i<3;i++)
+    {
+      for(var j=0;j<3;j++)
+      {
+        if(board[i][j]=='-')
+        {
+          board[i][j]=robotIcon;
+          bestMax=Math.max(bestMax,minimax(depth+1,!isMax));
+          board[i][j]='-';
+        }
 
-			}
-		}
-		return bestMax;
-	}
-	else
-	{
+      }
+    }
+    return bestMax;
+  }
+  else
+  {
        var bestMin=1000;
-       		for(var i=0;i<3;i++)
-		{
-			for(var j=0;j<3;j++)
-			{
-				if(board[i][j]=='-')
-				{
-					board[i][j]=userIcon;
-					bestMin=Math.min(bestMin,minimax(depth+1,isMax));
-					board[i][j]='-';
-				}
+          for(var i=0;i<3;i++)
+    {
+      for(var j=0;j<3;j++)
+      {
+        if(board[i][j]=='-')
+        {
+          board[i][j]=userIcon;
+          bestMin=Math.min(bestMin,minimax(depth+1,isMax));
+          board[i][j]='-';
+        }
 
-			}
-		}
-		return bestMin;
-	}
+      }
+    }
+    return bestMin;
+  }
 }
 
 function findNew()
@@ -209,111 +210,24 @@ function findNew()
   var newValue;
   for(var i=0;i<3;i++)
   {
-  	for(var j=0;j<3;j++)
-  	{
-  		if(board[i][j]=='-')
-  		{
-  			board[i][j]=robotIcon;
+    for(var j=0;j<3;j++)
+    {
+      if(board[i][j]=='-')
+      {
+        board[i][j]=robotIcon;
             newValue=minimax(0,false);
             board[i][j]='-';
             if(newValue>bestValue)
             {
-            	newRow=i;
-            	newColoumn=j;
-            	bestValue=newValue;
+              newRow=i;
+              newColoumn=j;
+              bestValue=newValue;
             }
-  		}
-  	}
+      }
+    }
   }
 }
 
-function defendFirst()
-{
-	if(board[1][1]=='-')
-	{
-		newRow=1;
-		newColoumn=1;
-		//console.log("tumi akhane keno");
-		return true;
-	}
-	var count=0;
-	var tempRow;
-	var tempColoumn;
-	for(var i=0;i<3;i++)
-	{
-	//	console.log(i);
-		count=0;
-		var check=false;
-		for(var j=0;j<3;j++)
-		{
-	//	  console.log("j "+j);
-          if(board[i][j]==userIcon)
-          {
-          	count++;
-          }
-          if(board[i][j]==robotIcon)
-          	break;
-        if(count==2)
-		{
-			//console.log("rana "+i+" "+j);
-		    for(var k=0;k<3;k++)
-		  	{
-              if(board[i][k]=='-')
-              {
-              	check=true;
-              	tempRow=i;
-          	    tempColoumn=k;
-              }
-            if(board[i][k]==robotIcon)
-          	break;
-		  	}
-		  	if(check==true)
-		  	{	
-			newRow=tempRow;
-			newColoumn=tempColoumn;
-			return true;
-		     }
-		}
-		}
-	}
-   // console.log("row clear");
-   	for(var i=0;i<3;i++)
-	{
-		count=0;
-		for(var j=0;j<3;j++)
-		{
-	//	  console.log("you "+i+" "+j);	
-          if(board[j][i]==userIcon)
-          {
-          	count++;
-          }
-          if(board[j][i]==robotIcon)
-          	break;
-        if(count==2)
-		{
-		  	for(var k=0;k<3;k++)
-		  	{
-              if(board[k][i]=='-')
-              {
-              	check=true;
-              	tempRow=k;
-          	    tempColoumn=i;
-              }
-            if(board[k][i]==robotIcon)
-          	break;
-		  	}
-		  	if(check==true)
-		  	{
-			newRow=tempRow;
-			newColoumn=tempColoumn;
-			return true;
-		    }
-		}
-		}
-	}
-     
-   return false;
-}
 
 function fill(id,grid)
 {
@@ -334,10 +248,15 @@ function fill(id,grid)
     }
     board[row][coloumn]=userIcon;
     //console.log(board);
+    
+    //minimax("robot");
+    findNew();  
+/*
     if(!defendFirst())
     {
         findNew();  
     }
+*/    
    // console.log(board);
     board[newRow][newColoumn]=robotIcon;
     var gridId=(newRow*3+newColoumn)+1;

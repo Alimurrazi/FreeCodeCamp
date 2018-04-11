@@ -22,6 +22,7 @@
 	z-index: 1;
 	margin: 10px;
 	opacity: 0.6;
+	cursor: pointer;
 }
 .part1
 {
@@ -69,4 +70,28 @@
 	color: white;
 	text-align: center;
 	vertical-align: middle;
+}
+
+.inline
+{
+	padding-top: 20%;
+	display: inline-block;
+}
+
+#display
+{
+	background-color: #800000;
+	padding: 5px;
+	width: 70px;
+	height: 35px;
+}
+
+h2
+{
+	padding-top: 5%;
+}
+
+.btn
+{
+	margin-left: 10px;
 }
